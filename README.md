@@ -24,13 +24,12 @@ pip install latin2nqo
 
 **as a software library**
 ```python
-from latin2nqo import latin2nqo
+from latin2nqo import Detransliterator
 
-model = latin2nqo.get_model_by_name('001.35')
+detransliterator = Detransliterator('001.35')
 latin = "musa dunbuya"
-reference_nqo = "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
-nqo = model.translate(latin, beam=5)
-assert reference_nqo == nqo
+nqo = detransliterator.detransliterate(latin, beam_size=5)
+assert reference_nqo == "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
 ```
 
 **as a console tool**

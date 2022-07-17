@@ -1,9 +1,29 @@
-from latin2nqo import latin2nqo
+from latin2nqo import Detransliterator
+import pytest
 
 
-def test_01():
-    model = latin2nqo.get_model_by_name('001.35')
-    latin = "musa dunbuya"
-    reference_nqo = "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
-    nqo = model.translate(latin, beam=5)
-    assert reference_nqo == nqo
+@pytest.fixture
+def detransliterators():
+    return [
+        Detransliterator('001.35')
+    ]
+
+
+def test_01(detransliterators):
+    for detransliterator in detransliterators:
+        latin = "musa dunbuya"
+        reference_nqo = "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
+        nqo = detransliterator.detransliterate(latin, beam_size=5)
+        assert reference_nqo == nqo
+
+
+def test_02(detransliterators):
+    for detransliterator in detransliterators:
+        latins = ["musa dunbuya", "Musa Dunbuya"]
+        reference_nqo = "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
+        nqos = [
+            detransliterator.detransliterate(latin, beam_size=5)
+            for latin in latins
+        ]
+        assert len(set(nqos)) == 1, "incorrect upper case handling"
+        assert reference_nqo == nqos[0]

@@ -2,7 +2,7 @@ import sys
 from io import StringIO
 import argparse
 # import csv
-from .latin2nqo import get_model_by_name
+from .latin2nqo import Detransliterator
 
 
 def main_parse_command_line_args():
@@ -21,11 +21,15 @@ def main_detransliterate(args):
 
     if not args.model_name:
         raise ValueError("--model-name required for detransliteration")
-    model = get_model_by_name(args.model_name)
+
+    detransliterator = Detransliterator(args.model_name)
 
     sys.stdout = std_out_bkp
     for latin_line in sys.stdin:
-        nqo_line = model.translate(latin_line, beam=args.beam_size)
+        nqo_line = detransliterator.detransliterate(
+            latin_line,
+            beam_size=args.beam_size
+        )
         print(nqo_line)
 
 
