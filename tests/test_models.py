@@ -1,5 +1,6 @@
 from latin2nqo import latin2nqo
 
+
 def test_01():
     model = latin2nqo.get_model_by_name('001.35')
     latin = "musa dunbuya"

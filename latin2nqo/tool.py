@@ -1,8 +1,9 @@
 import sys
 from io import StringIO
 import argparse
-import csv
+# import csv
 from .latin2nqo import get_model_by_name
+
 
 def main_parse_command_line_args():
     parser = argparse.ArgumentParser("latin to nqo detransliterator")
@@ -28,11 +29,9 @@ def main_detransliterate(args):
         print(nqo_line)
 
 
-
 if __name__ == '__main__':
     args = main_parse_command_line_args()
-    if True: # args.option == 'command-name':
+    if True:  # args.option == 'command-name':
         main_detransliterate(args)
     else:
         raise ValueError(f"Unknown command: {args.option}")
-

@@ -3,6 +3,9 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/latin2nqo.svg)](https://pypi.org/project/latin2nqo)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/latin2nqo.svg)](https://pypi.org/project/latin2nqo)
 
+![build](https://github.com/mdoumbouya/latin2nqo/actions/workflows/ci.yaml/badge.svg)
+
+
 -----
 
 **Table of Contents**
