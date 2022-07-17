@@ -18,7 +18,20 @@ pip install latin2nqo
 ```
 
 ## Usage
+
+**as a software library**
+```python
+from latin2nqo import latin2nqo
+
+model = latin2nqo.get_model_by_name('001.35')
+latin = "musa dunbuya"
+reference_nqo = "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
+nqo = model.translate(latin, beam=5)
+assert reference_nqo == nqo
 ```
+
+**as a console tool**
+```console
 python -m latin2nqo.tool --help
 ```
 
@@ -27,7 +40,7 @@ python -m latin2nqo.tool --help
 cat file.latin | python -m latin2nqo.tool > file.nqo
 ```
 
-**TODO: Example: detransliterate a csv file**
+**Example: detransliterate a csv file**
 ```
 cat file.latin                     \
     | python -m latin2nqo.tool    \

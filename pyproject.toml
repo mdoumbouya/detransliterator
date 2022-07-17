@@ -22,7 +22,11 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  'fairseq', 
+  'sacremoses==0.0.49', 
+  'subword-nmt==0.3.8'
+]
 dynamic = ["version"]
 
 [project.urls]
