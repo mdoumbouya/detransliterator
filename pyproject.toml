@@ -30,9 +30,9 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/latin2nqo#readme"
-Issues = "https://github.com/unknown/latin2nqo/issues"
-Source = "https://github.com/unknown/latin2nqo"
+Documentation = "https://github.com/mdoumbouya/latin2nqo#readme"
+Issues = "https://github.com/mdoumbouya/latin2nqo/issues"
+Source = "https://github.com/mdoumbouya/latin2nqo"
 
 [tool.hatch.version]
 path = "latin2nqo/__about__.py"
