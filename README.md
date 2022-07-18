@@ -1,7 +1,7 @@
-# latin2nqo
+# detransliterator
 
-![Build](https://github.com/mdoumbouya/latin2nqo/actions/workflows/ci.yaml/badge.svg) [![PyPI - Version](https://img.shields.io/pypi/v/latin2nqo.svg)](https://pypi.org/project/latin2nqo)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/latin2nqo.svg)](https://pypi.org/project/latin2nqo)
+![Build](https://github.com/mdoumbouya/detransliterator/actions/workflows/ci.yaml/badge.svg) [![PyPI - Version](https://img.shields.io/pypi/v/detransliterator.svg)](https://pypi.org/project/detransliterator)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/detransliterator.svg)](https://pypi.org/project/detransliterator)
 
 
 
@@ -17,35 +17,35 @@
 ## Installation
 
 ```console
-pip install latin2nqo
+pip install detransliterator
 ```
 
 ## Usage
 
 **as a software library**
 ```python
-from latin2nqo import Detransliterator
+from detransliterator import Detransliterator
 
-detransliterator = Detransliterator('001.35')
+detransliterator = Detransliterator('latin2nqo_001.35')
 latin = "musa dunbuya"
 nqo = detransliterator.detransliterate(latin, beam_size=5)
-assert reference_nqo == "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
+assert nqo == "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
 ```
 
 **as a console tool**
 ```console
-python -m latin2nqo.tool --help
+python -m detransliterator.tool --help
 ```
 
 **example: detransliterate a stream**
 ```console
-echo "musa dunbuya" | python -m latin2nqo.tool
+echo "musa dunbuya" | python -m detransliterator.tool
 ```
 
 **example: detransliterate a csv file**
 ```console
 cat file.latin                     \
-    | python -m latin2nqo.tool    \
+    | python -m detransliterator.tool    \
         --csv-separator \t        \
         --csv-column 1            \
         --csv-target-column-name  \
@@ -53,8 +53,8 @@ cat file.latin                     \
 ```
 **example: use a particular GPU**
 ```console
-CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m latin2nqo.tool
+CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m detransliterator.tool
 ```
 ## License
 
-`latin2nqo` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`detransliterator` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
