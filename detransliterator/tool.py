@@ -12,9 +12,6 @@ from .detransliterator import Detransliterator
 def main_parse_command_line_args():
     parser = argparse.ArgumentParser("latin to nqo detransliterator")
     parser.add_argument("--model-name", required=True)
-    parser.add_argument("--input-text-file")
-    parser.add_argument("--input-csv-file")
-    parser.add_argument("--input-csv-file-separator")
     parser.add_argument("--beam-size", type=int, required=False, default=5)
     return parser.parse_args()
 
