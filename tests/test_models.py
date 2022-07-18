@@ -1,11 +1,11 @@
-from latin2nqo import Detransliterator
+from detransliterator import Detransliterator
 import pytest
 
 
 @pytest.fixture
 def detransliterators():
     return [
-        Detransliterator('001.35')
+        Detransliterator('latin2nqo_001.35')
     ]
 
 

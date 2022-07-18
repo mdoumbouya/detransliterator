@@ -2,12 +2,12 @@ import sys
 from io import StringIO
 import argparse
 # import csv
-from .latin2nqo import Detransliterator
+from .detransliterator import Detransliterator
 
 
 def main_parse_command_line_args():
     parser = argparse.ArgumentParser("latin to nqo detransliterator")
-    parser.add_argument("--model-name", required=False, default="001.35")
+    parser.add_argument("--model-name", required=False, default="latin2nqo_001.35")
     parser.add_argument("--input-text-file")
     parser.add_argument("--input-csv-file")
     parser.add_argument("--input-csv-file-separator")

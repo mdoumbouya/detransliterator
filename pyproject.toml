@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "latin2nqo"
+name = "detransliterator"
 description = ''
 readme = "README.md"
 requires-python = ">=3.7"
@@ -36,12 +36,12 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/mdoumbouya/latin2nqo#readme"
-Issues = "https://github.com/mdoumbouya/latin2nqo/issues"
-Source = "https://github.com/mdoumbouya/latin2nqo"
+Documentation = "https://github.com/mdoumbouya/detransliterator#readme"
+Issues = "https://github.com/mdoumbouya/detransliterator/issues"
+Source = "https://github.com/mdoumbouya/detransliterator"
 
 [tool.hatch.version]
-path = "latin2nqo/__about__.py"
+path = "detransliterator/__about__.py"
 
 [tool.hatch.build.targets.sdist]
 [tool.hatch.build.targets.wheel]
