@@ -51,7 +51,7 @@ echo "musa dunbuya" | python -m detransliterator.tool --model-name latin2nqo_001
 cat test_csv_no_header.csv \
 | python -m detransliterator.csv_tool \
     extract-column --column-ix 1 \
-> tmp_col1.txt
+> tmp_col1_1.txt
 ```
 
 **example: extract a column from  a tsv file**
@@ -59,24 +59,25 @@ cat test_csv_no_header.csv \
 cat test_tsv_with_header.tsv \
 | python -m detransliterator.csv_tool \
     extract-column --column-ix 1 --skip-lines 1 --csv-formatting-params delimiter tab \
-> tmp_col2.txt
+> tmp_col1_2.txt
 ```
 
+
 **example: detransliterate a column from a csv file**
+```console
+cat test_csv_with_header.csv \
+| python -m detransliterator.csv_tool extract-column --column-ix 1 --skip-lines 1 \
+| python -m detransliterator.tool --model-name latin2nqo_001.35 \
+> tmp_col_1_detransliterated_1.nqo
+```
+
+**example: detransliterate a column from a tsv file**
 ```console
 cat test_tsv_no_header.tsv \
 | python -m detransliterator.csv_tool extract-column --column-ix 1 \
     --csv-formatting-params delimiter tab \
 | python -m detransliterator.tool --model-name latin2nqo_001.35 \
-> tmp_detransliterated_1.nqo
-```
-
-**example: detransliterate a column from a tsv file**
-```console
-cat test_csv_with_header.csv \
-| python -m detransliterator.csv_tool extract-column --column-ix 1 --skip-lines 1 \
-| python -m detransliterator.tool --model-name latin2nqo_001.35 \
-> tmp_detransliterated_2.nqo
+> tmp_col_1_detransliterated_2.nqo
 ```
 
 **example: use a particular GPU**
