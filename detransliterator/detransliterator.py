@@ -1,6 +1,4 @@
 from pathlib import Path
-from fairseq.models.transformer import TransformerModel
-
 
 class Detransliterator():
     def __init__(self, model_name) -> None:
@@ -8,6 +6,7 @@ class Detransliterator():
         self._load_model()
 
     def _load_model(self):
+        from fairseq.models.transformer import TransformerModel
         base_dir = Path(__file__).parent / "assets" / self.model_name
         self.model = TransformerModel.from_pretrained(
             str(base_dir / "checkpoints/"),

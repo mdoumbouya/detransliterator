@@ -1,13 +1,17 @@
 import sys
 from io import StringIO
 import argparse
-# import csv
+import logging
+from .utils import get_log_filename
+
+logging.basicConfig(filename=get_log_filename('detransliterator.tool'), level=logging.DEBUG)
+
 from .detransliterator import Detransliterator
 
 
 def main_parse_command_line_args():
     parser = argparse.ArgumentParser("latin to nqo detransliterator")
-    parser.add_argument("--model-name", required=False, default="latin2nqo_001.35")
+    parser.add_argument("--model-name", required=True)
     parser.add_argument("--input-text-file")
     parser.add_argument("--input-csv-file")
     parser.add_argument("--input-csv-file-separator")
