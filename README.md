@@ -37,12 +37,12 @@ assert reference_nqo == "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
 python -m latin2nqo.tool --help
 ```
 
-**Example: detransliterate a stream**
+**example: detransliterate a stream**
 ```
-cat file.latin | python -m latin2nqo.tool > file.nqo
+echo "musa dunbuya" | python -m latin2nqo.tool
 ```
 
-**Example: detransliterate a csv file**
+**example: detransliterate a csv file**
 ```
 cat file.latin                     \
     | python -m latin2nqo.tool    \
@@ -51,7 +51,10 @@ cat file.latin                     \
         --csv-target-column-name  \
     > file.nqo
 ```
-
+**example: use a particular GPU**
+```
+CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m latin2nqo.tool
+```
 ## License
 
 `latin2nqo` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
