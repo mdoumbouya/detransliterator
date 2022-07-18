@@ -38,7 +38,7 @@ test-csv-tools:
 
 	rm tmp_col1.txt tmp_col2.txt tmp_col3.txt tmp_col4.txt
 
-test-extract-and-detransliterate:
+test-extract-and-detransliterate_latin2nqo_001.35:
 	cat detransliterator/assets/test_data/test_tsv_no_header.tsv \
 	| python -m detransliterator.csv_tool extract-column --column-ix 1 \
 		--csv-formatting-params delimiter tab \
@@ -51,5 +51,19 @@ test-extract-and-detransliterate:
 	> tmp_detransliterated_2.nqo
 
 	diff tmp_detransliterated_1.nqo tmp_detransliterated_2.nqo
+	rm tmp_detransliterated_1.nqo tmp_detransliterated_2.nqo
 
-		
+test-extract-and-detransliterate_latin2nqo_001.38:
+	cat detransliterator/assets/test_data/test_tsv_no_header.tsv \
+	| python -m detransliterator.csv_tool extract-column --column-ix 1 \
+		--csv-formatting-params delimiter tab \
+	| python -m detransliterator.tool --model-name latin2nqo_001.38 \
+	> tmp_detransliterated_1.nqo
+
+	cat detransliterator/assets/test_data/test_csv_with_header.csv \
+	| python -m detransliterator.csv_tool extract-column --column-ix 1 --skip-lines 1 \
+	| python -m detransliterator.tool --model-name latin2nqo_001.38 \
+	> tmp_detransliterated_2.nqo
+
+	diff tmp_detransliterated_1.nqo tmp_detransliterated_2.nqo
+	rm tmp_detransliterated_1.nqo tmp_detransliterated_2.nqo

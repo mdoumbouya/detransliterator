@@ -5,7 +5,8 @@ import pytest
 @pytest.fixture
 def detransliterators():
     return [
-        Detransliterator('latin2nqo_001.35')
+        Detransliterator('latin2nqo_001.35'),
+        Detransliterator('latin2nqo_001.38')
     ]
 
 

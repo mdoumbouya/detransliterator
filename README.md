@@ -64,25 +64,32 @@ cat test_tsv_with_header.tsv \
 
 **example: detransliterate a column from a csv file**
 ```console
-	cat test_tsv_no_header.tsv \
-	| python -m detransliterator.csv_tool extract-column --column-ix 1 \
-		--csv-formatting-params delimiter tab \
-	| python -m detransliterator.tool --model-name latin2nqo_001.35 \
-	> tmp_detransliterated_1.nqo
+cat test_tsv_no_header.tsv \
+| python -m detransliterator.csv_tool extract-column --column-ix 1 \
+    --csv-formatting-params delimiter tab \
+| python -m detransliterator.tool --model-name latin2nqo_001.35 \
+> tmp_detransliterated_1.nqo
 ```
 
 **example: detransliterate a column from a tsv file**
 ```console
-	cat test_csv_with_header.csv \
-	| python -m detransliterator.csv_tool extract-column --column-ix 1 --skip-lines 1 \
-	| python -m detransliterator.tool --model-name latin2nqo_001.35 \
-	> tmp_detransliterated_2.nqo
+cat test_csv_with_header.csv \
+| python -m detransliterator.csv_tool extract-column --column-ix 1 --skip-lines 1 \
+| python -m detransliterator.tool --model-name latin2nqo_001.35 \
+> tmp_detransliterated_2.nqo
 ```
 
 **example: use a particular GPU**
 ```console
 CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m detransliterator.tool
 ```
+
+## Detransliteration Models
+|Model|Source Script|Target Script|#Parameters|Validation BLEU|Test BLEU|
+|:--:|:--:|:--:|--:|--:|--:|
+|latin2nqo_001.35|latin|nqo|2 520 576|75.56|74.14|
+|latin2nqo_001.38|latin|nqo|3 909 120|78.51|77.06|
+
 
 ## License
 
