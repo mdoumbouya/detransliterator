@@ -38,12 +38,12 @@ python -m latin2nqo.tool --help
 ```
 
 **example: detransliterate a stream**
-```
+```console
 echo "musa dunbuya" | python -m latin2nqo.tool
 ```
 
 **example: detransliterate a csv file**
-```
+```console
 cat file.latin                     \
     | python -m latin2nqo.tool    \
         --csv-separator \t        \
@@ -52,7 +52,7 @@ cat file.latin                     \
     > file.nqo
 ```
 **example: use a particular GPU**
-```
+```console
 CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m latin2nqo.tool
 ```
 ## License

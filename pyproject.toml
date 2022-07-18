@@ -21,6 +21,12 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Natural Language :: Mande",
+  "Natural Language :: Manding",
+  "Natural Language :: N'ko",
+  "Natural Language :: Bambara",
+  "Natural Language :: Maninka",
 ]
 dependencies = [
   'fairseq', 
