@@ -26,10 +26,10 @@ pip install detransliterator
 ```python
 from detransliterator import Detransliterator
 
-detransliterator = Detransliterator('latin2nqo_001.35')
-latin = "musa dunbuya"
-nqo = detransliterator.detransliterate(latin, beam_size=5)
-assert nqo == "ߡߎߛߊ߫ ߘߎ߲ߓߎߦߊ"
+detransliterator = Detransliterator('latin2nqo_001.38')
+for latin in ["maari", "mààri", "magari", "màgàri", "makari", "màkàri"]:
+    nqo = detransliterator.detransliterate(latin, beam_size=5)
+    assert nqo == "ߡߊ߰ߙߌ"
 ```
 
 ### as a console tool
@@ -84,11 +84,21 @@ cat test_csv_with_header.csv \
 CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m detransliterator.tool
 ```
 
-## Detransliteration Models
+## latin2nqo Detransliteration Models
 |Model|Source Script|Target Script|#Parameters|Validation BLEU|Test BLEU|
 |:--:|:--:|:--:|--:|--:|--:|
 |latin2nqo_001.35|latin|nqo|2 520 576|75.56|74.14|
 |latin2nqo_001.38|latin|nqo|3 909 120|78.51|77.06|
+
+### Supported variants of latin transliterations
+|variant|example latin|detransliterated nqo|
+|:--|:--:|:--:|
+|maninka | maari | ߡߊ߰ߙߌ |
+|maninka tonal | mààri| ߡߊ߰ߙߌ |
+|bambara-ga | magari| ߡߊ߰ߙߌ |
+|bambara-ga tonal | màgàri| ߡߊ߰ߙߌ |
+|bambara-ka | makari| ߡߊ߰ߙߌ |
+|bambara-ka tonal | màkàri| ߡߊ߰ߙߌ |
 
 
 ## License
