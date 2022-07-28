@@ -105,3 +105,15 @@ CUDA_VISIBLE_DEVICES="1" echo "musa dunbuya" | python -m detransliterator.tool
 ## License
 
 `detransliterator` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+
+If you use this software in your work, please cite it using the following metadata:
+```
+@software{Doumbouya_Detransliterator_2022,
+    author = {Doumbouya, Moussa},
+    month = {7},
+    title = {{Detransliterator}},
+    url = {https://github.com/mdoumbouya/detransliterator},
+    version = {0.0.2},
+    year = {2022}
+}
+```
