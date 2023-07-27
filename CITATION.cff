@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
   - family-names: Doumbouya
-    given-names: Moussa
-    orcid: 
+    given-names: Moussa Koulako Bala
+    orcid: 0000-0002-5655-4489
 title: "Detransliterator"
 version: 0.0.2
 doi: 
